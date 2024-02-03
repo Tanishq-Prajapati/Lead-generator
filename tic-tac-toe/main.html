@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div id="game_over">
+        <div id="game_over_cont">
+            <div id="game_over_head">
+                Winner is X
+            </div>
+            <div class="buttu">
+                <div class="but">
+                    Play Again
+                </div>
+                <div class="but">
+                    Exit to Menu
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="welcome_container">
+        <div class="head">Tic-Tac-Toe</div>
+        <div id="buts">
+            <div class="but">
+                Play
+            </div>
+            <div class="but">
+                Exit
+            </div>
+        </div>
+        <div id="high_score">
+            wins -> 0
+        </div>
+    </div>
+    <div class="board">
+        <div id="whose_turn">Turn of X</div>
+        <div class="board_stack">
+            <button class="board_step"></button>
+            <button class="board_step"></button>
+            <button class="board_step"></button>
+        </div>
+        <div class="board_stack">
+            <button class="board_step"></button>
+            <button class="board_step"></button>
+            <button class="board_step"></button>
+        </div>
+        <div class="board_stack">
+            <button class="board_step"></button>
+            <button class="board_step"></button>
+            <button class="board_step"></button>
+        </div>
+        <button id="exitgame">
+            exit game
+        </button>
+    </div>
+</body>
+<script src="script.js"></script>
+<style>
+    body{
+        width: 300px;
+        height: 580px;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins',sans-serif;
+    }
+    #high_score{
+        font-family: 'Poppins',sans-serif;
+        margin-top: 20px;
+        font-weight: 600;
+        font-size: 20px;
+        color: red;
+    }
+
+    #welcome_container{
+        display: flex;
+        width: 100%;
+        height: 580px;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        z-index: 1;
+        transition: inherit;
+        transition-duration: .2s;
+    }
+
+    #buts{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .but{
+        background-color: blue;
+        color: white;
+        padding: 7px;
+        font-size: 20px;
+        font-family: 'Poppins',sans-serif;
+        font-weight: 600;
+        border-radius: 5px;
+        text-align: center;
+        width: 150px;
+        transform: inherit;
+        transition-duration: .1s;
+        cursor: pointer;
+    }
+    .but:hover{
+        background-color: black;
+        transform: scale(1.1);
+    }
+    .head{
+        font-family: 'Poppins',sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        text-transform: uppercase;
+
+    }
+
+    /* Adding the board CSS here */
+    .board{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        height: 580px;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+    }
+    .board_stack{
+        display: flex;
+        flex-direction: 10px;
+        gap: 15px;
+    }
+    .board_step{
+        width: 70px;
+        height: 70px;
+        background-color: black;
+        border-radius: 10px;
+        transition: inherit;
+        transition-duration: .3s;
+        border: none;
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    #exitgame{
+        background-color: blue;
+        padding: 7px;
+        width: 150px;
+        margin-top: 20px;
+        border: none;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        height: 40px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    #exitgame:hover{
+        background-color: red;
+        transition: inherit;
+        transition-duration: .3s;
+        transform: scale(1.1);
+    }
+    .board_step:hover{
+        background-color: grey;
+        transform: scale(1.1);
+    }
+    #whose_turn{
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    #game_over{
+        width: 300px;
+        height: 580px;
+        z-index: 3;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        opacity: 0;
+        pointer-events:none;
+    }
+    #game_over_cont{
+        background-color: white;
+        padding: 20px;
+        border-radius: 20px;
+        filter: drop-shadow(0 0 40px black);
+        width: fit-content;
+    }
+    #game_over_head{
+        font-weight: 600;
+        font-size: 25px;
+        text-align: center;
+    }
+    .buttu{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+</style>
+</html>
